@@ -35,7 +35,8 @@ const useAxios = () => {
           try {
             const refreshToken = auth?.refreshToken;
             const response = await axios.post(
-              `${(import.meta.env.VITE_SERVER_BASE_URL, { refreshToken })}`
+              `${import.meta.env.VITE_SERVER_BASE_URL}/auth/refresh-token`,
+              { refreshToken }
             );
             const { token } = response.data;
             console.log("New Token:", token);
