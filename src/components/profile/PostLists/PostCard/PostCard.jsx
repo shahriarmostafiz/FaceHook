@@ -10,8 +10,8 @@ const PostCard = ({ post }) => {
         <article className="card mt-6 lg:mt-8">
             <PostHeader post={post} />
             <PostBody content={post?.content} poster={post?.image} />
-            <PostAction />
-            <PostComments />
+            <PostAction post={post} />
+            <PostComments post={post} />
         </article>
     );
 };
