@@ -10,9 +10,8 @@ export const actions = {
     Data_Fetching: "Post_Data_Fetching",
     Data_Fetched: "Post_Data_Fetched",
     Post_data_Edited: "Post_User_Data_Edited",
+    Post_data_Created: "Post_User_Data_Created",
     Post_data_Deleted: "Post_User_Data_Deleted",
-    Post_Liked: "Post_Liked",
-    Post_Commented: "Post_Commented",
     Data_Fetch_Error: "Post_Data_Fetch_Error",
   },
 };

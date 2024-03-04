@@ -3,10 +3,13 @@ import PostList from '../components/profile/PostLists/PostList';
 import { initialState, postReducer } from '../reducer/postReducer';
 import { actions } from '../actions';
 import useAxios from '../hooks/useAxios';
+import usePosts from '../hooks/usePosts';
+import NewPosts from '../components/NewPosts';
 
 const MyHomePage = () => {
 
-    const [state, dispatch] = useReducer(postReducer, initialState)
+    // const [state, dispatch] = useReducer(postReducer, initialState)
+    const { state, dispatch } = usePosts()
     const { api } = useAxios()
     useEffect(() => {
         dispatch({ type: actions.posts.Data_Fetching })
@@ -34,6 +37,7 @@ const MyHomePage = () => {
     }
     return (
         <div>
+            <NewPosts />
             <PostList posts={state?.posts} />
             {/* {state?.posts?.length} */}
         </div>

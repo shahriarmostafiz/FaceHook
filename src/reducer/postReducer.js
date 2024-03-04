@@ -16,7 +16,9 @@ const postReducer = (state, action) => {
     case actions.posts.Data_Fetch_Error: {
       return { ...state, error: action.error, loading: false };
     }
-
+    case actions.posts.Post_data_Created: {
+      return { ...state, loading: false, posts: [...state.posts, action.data] };
+    }
     default: {
       return state;
     }
